@@ -102,10 +102,9 @@ class SecretariatType extends AbstractType
             ->add('MemberModificationAddress', TextType::class, array('label' => 'Adresse : ', 'required' => false, 'disabled' => true))
             ->add('MemberModificationZip', IntegerType::class, array('label' => 'Code postal : ', 'required' => false, 'disabled' => true))
             ->add('MemberModificationCity', TextType::class, array('label' => 'Localité : ', 'required' => false, 'disabled' => true))
+            ->add('MemberModificationPhone', TextType::class, array('label' => 'N° téléphone : ', 'required' => false, 'disabled' => true))
             ->add('MemberModificationCountry', CountryType::class, array('label' => 'Pays : ', 'choice_translation_locale' => 'fr', 'preferred_choices' => array('BE', 'FR'), 'disabled' => true))
             ->add('MemberModificationEmail', EmailType::class, array('label' => 'Email : ', 'required' => false, 'disabled' => true))
-            ->add('MemberModificationPhone', TextType::class, array('label' => 'Telephone : ', 'required' => false, 'disabled' => true))
-            
             ->add('Submit', SubmitType::class, array('label' => 'Valider'))
         ;
     }
@@ -117,6 +116,7 @@ class SecretariatType extends AbstractType
             ->add('MemberModificationAddress', TextType::class, array('label' => 'Adresse : ', 'required' => false, 'disabled' => true))
             ->add('MemberModificationZip', IntegerType::class, array('label' => 'Code postal : ', 'required' => false, 'disabled' => true))
             ->add('MemberModificationCity', TextType::class, array('label' => 'Localité : ', 'required' => false, 'disabled' => true))
+            ->add('MemberModificationPhone', TextType::class, array('label' => 'N° téléphone : ', 'required' => false, 'disabled' => true))
             ->add('MemberModificationCountry', CountryType::class, array('label' => 'Pays : ', 'choice_translation_locale' => 'fr', 'preferred_choices' => array('BE', 'FR'), 'disabled' => true))
             ->add('MemberModificationEmail', EmailType::class, array('label' => 'Email : ', 'required' => false, 'disabled' => true))
             ->add('Submit', SubmitType::class, array('label' => 'Valider'))
@@ -127,13 +127,14 @@ class SecretariatType extends AbstractType
     {
         $builder
             ->add('MemberPhoto', FileType::class, array('label' => 'Photo : ', 'required' => false, 'mapped' => false))
+   	    ->add('MemberFirstname', TextType::class, array('label' => 'Prénom : '))
+            ->add('MemberName', TextType::class, array('label' => 'Nom : '))
             ->add('MemberAddress', TextType::class, array('label' => 'Adresse : '))
             ->add('MemberZip', IntegerType::class, array('label' => 'Code postal : '))
             ->add('MemberCity', TextType::class, array('label' => 'Localité : '))
+            ->add('MemberPhone', TextType::class, array('label' => 'N° téléphone : '))
             ->add('MemberCountry', CountryType::class, array('label' => 'Pays : ', 'choice_translation_locale' => 'fr', 'preferred_choices' => array('BE', 'FR')))
             ->add('MemberEmail', EmailType::class, array('label' => 'Email : '))
-            ->add('MemberPhone', TextType::class, array('label' => 'Telephone : ', 'required' => false))
-            
             ->add('Submit', SubmitType::class, array('label' => 'Modifier'))
         ;
     }
